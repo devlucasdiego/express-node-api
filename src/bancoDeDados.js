@@ -22,4 +22,10 @@ function getProdutos() {
   return Object.values(produtos); // Retorna todos os valores do objeto Produtos.
 }
 
-module.exports = { salvarProduto, getProduto, getProdutos }; // Funções visíveis fora do arquivo.
+function excluirProduto(id) {
+  const produto = produtos[id];
+  delete produtos[id]; // Excluir produto
+  return produto;
+}
+
+module.exports = { salvarProduto, getProduto, getProdutos, excluirProduto }; // Funções visíveis fora do arquivo.
